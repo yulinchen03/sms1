@@ -11,7 +11,7 @@ This project is a simply machine-learning project that illustrates how to detect
 The following guide will explain you how a model can be trained and served.
 Please note that we have adapted the original project, the instructions only work with our extension.
 
-The project **requires a Python 3.7 environment** to run.
+The project **requires a Python 3.12 environment** to run (tested with 3.12.9).
 
 
 ## Training
@@ -27,7 +27,7 @@ Either you create a local environment...
 
 ... or you can prepare a Docker container for the training:
 
-    $ docker run -it --rm -v /path/to/project/:/root/sms/ python:3.7-slim bash
+    $ docker run -it --rm -v ./:/root/sms/ python:3.12.9-slim bash
     ... (container gets started)
     $ cd /root/sms/
     $ pip install -r requirements.txt
@@ -52,8 +52,14 @@ The resulting model files will be placed as `.joblib` files in the `output/` fol
 
 The trained `.joblib` model files can be used by Python programs.
 However, we want to use it cross-language in a distributed application, as such, it is more convenient to wrap it in a micro service.
-
 You can find a Dockerfile in the project, which contains all required steps for training the model, embedding the model in the image, and for preparing an executable application.
-You can build the image with the command `docker build -t smsapp .` and then run it by executing `docker run -it --rm -p8080:8080 smsapp`.
+
+First build the image (the "." is important):
+
+    docker build -t smsapp .
+
+Afterwards, you can execute it 
+
+    docker run -it --rm -p8080:8080 smsapp
 
 Once the application is started, you can either access `localhost:8080/apidocs` with your browser or send `POST` requests to `localhost:8080/predict` to request predictions.
