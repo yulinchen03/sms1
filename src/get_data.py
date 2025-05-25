@@ -6,7 +6,7 @@ import zipfile
 
 # URL = 'http://archive.ics.uci.edu/ml/machine-learning-databases/00228/smsspamcollection.zip'
 # URL = 'https://surfdrive.surf.nl/files/index.php/s/OZRd9BcxhGkxTuy/download' # v2, 2000 datapoints
-URL = 'https://surfdrive.surf.nl/files/index.php/s/H4e35DvjaX18pTI/download'
+URL = 'https://surfdrive.surf.nl/files/index.php/s/HU5mY29RzxRlHCU/download'
 
 EXTRACT_DIR = "smsspamcollection"
 

@@ -3,3 +3,5 @@
     remote = mylocalremote
 ['remote "mylocalremote"']
     url = /Users/yulinchen/remotedvc
+['remote "myremote"']
+    url = gdrive://1aid5f4FEJawAITVE2qLVHK5IDSWvpiNg
